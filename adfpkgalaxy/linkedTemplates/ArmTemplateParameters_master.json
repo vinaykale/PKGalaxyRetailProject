@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfpkgalaxy"
+		},
+		"LS_PKGalaxySQLDB_password": {
+			"value": ""
+		},
+		"LS_PKGalaxyStorage_connectionString": {
+			"value": ""
+		},
+		"LS_PKGaraxyStorage_accountKey": {
+			"value": ""
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_server": {
+			"value": "tsteus2pkgsql01.database.windows.net"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_database": {
+			"value": "pkgalaxy_db"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_userName": {
+			"value": "pk_admin"
+		},
+		"LS_PKGaraxyStorage_properties_typeProperties_url": {
+			"value": "https://pkgalaxystorgesccount.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

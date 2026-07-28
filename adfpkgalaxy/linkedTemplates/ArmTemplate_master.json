@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfpkgalaxy"
+		},
+		"LS_PKGalaxySQLDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_PKGalaxySQLDB'"
+		},
+		"LS_PKGalaxyStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_PKGalaxyStorage'"
+		},
+		"LS_PKGaraxyStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PKGaraxyStorage'"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "tsteus2pkgsql01.database.windows.net"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "pkgalaxy_db"
+		},
+		"LS_PKGalaxySQLDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "pk_admin"
+		},
+		"LS_PKGaraxyStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkgalaxystorgesccount.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfpkgalaxy_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_PKGalaxySQLDB_password": {
+						"value": "[parameters('LS_PKGalaxySQLDB_password')]"
+					},
+					"LS_PKGalaxyStorage_connectionString": {
+						"value": "[parameters('LS_PKGalaxyStorage_connectionString')]"
+					},
+					"LS_PKGaraxyStorage_accountKey": {
+						"value": "[parameters('LS_PKGaraxyStorage_accountKey')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"LS_PKGalaxySQLDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_PKGalaxySQLDB_properties_typeProperties_server')]"
+					},
+					"LS_PKGalaxySQLDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_PKGalaxySQLDB_properties_typeProperties_database')]"
+					},
+					"LS_PKGalaxySQLDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_PKGalaxySQLDB_properties_typeProperties_userName')]"
+					},
+					"LS_PKGaraxyStorage_properties_typeProperties_url": {
+						"value": "[parameters('LS_PKGaraxyStorage_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

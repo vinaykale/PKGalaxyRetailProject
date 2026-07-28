@@ -1,0 +1,15 @@
+{
+	"name": "adfpkgalaxy",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1eb9c60e-4cbf-49c3-bfa3-96af93853528",
+		"tenantId": "6aa6e445-38c4-4231-9593-910f7bddb434"
+	}
+}

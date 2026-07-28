@@ -167,7 +167,7 @@
 				]
 			},
 			{
-				"name": "Copy data1",
+				"name": "Customer",
 				"type": "Copy",
 				"dependsOn": [
 					{
